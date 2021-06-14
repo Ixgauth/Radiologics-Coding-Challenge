@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Home page</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+			table.challenge {
+				background-color:#f8f8f8;
+				border-collapse:separate;
+				border-spacing:6px 8px;
+				border:1px solid #000080;
+				border-radius:10px;
+				margin-left:2%;
+				margin-right:2%;
+				text-align:left;
+				width:96%;
+			}
+        </style>
+    </head>
+    <body>
+      	<div th:if="${ not#lists.isEmpty(subjlist)}">
+          <table class='challenge'>
+            <tr class='challenge'>
+              <th class='challenge'>Name</th>
+              <th class='challenge'>Age</th>
+              <th class='challenge'>Sex</th>
+              <th class='challenge'>Occupation</th>
+            </tr>
+            <tr th:each="subject : ${subjlist}" class='challenge'>
+              <td class='challenge' th:text="${subject.name}" ></td>
+              <td class='challenge' th:text="${subject.age}"></td>
+              <td class='challenge' th:text="${subject.sex}"></td>
+              <td class='challenge' th:text="${subject.occupation}"></td>
+            </tr>
+          <table>
+          <a href="/open_new">add new employee</a>
+        </div>
+    </body>
+</html>
