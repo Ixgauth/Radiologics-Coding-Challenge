@@ -34,16 +34,21 @@ public class WebController {
 	 * @return String to call for the opening of index.html
 	 */
 	@GetMapping("/")
-	public String homePage(Model model)
+	public String loginPage(Model model)
 	{
+		return "index";  
+	}
+	
+	@GetMapping("/loginSuccess")
+	public String homePage(Model model) {
 		List<Subject> subj=(List<Subject>) repo.findAll();
 		model.addAttribute("subjlist", subj); 
-		return "index";  
+		return "loginSuccess";
 	}
 	
 	/**
 	 * Method for opening the form for creating a new user.
-	 * @param model Will hold information on the subject transer object.
+	 * @param model Will hold information on the subject transfer object.
 	 * @return String to call for the opening of addSubject.html
 	 */
 	@GetMapping("/open_new")

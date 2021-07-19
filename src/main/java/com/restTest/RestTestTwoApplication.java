@@ -17,7 +17,7 @@ import com.restTest.repos.SubjectRepository;
  *
  */
 @SpringBootApplication
-public class RestTestTwoApplication {
+public class RestTestTwoApplication{
 
 	public static void main(String[] args) {
 		SpringApplication.run(RestTestTwoApplication.class, args);
